@@ -15,7 +15,7 @@ void LCD_Init(uint8_t SEG){
   LCD->PM[3] = 0x00;
   if (SEG & (1<<1)){ // SEG1 Enable
     LCD->PM[0] |= (3<<0);
-    LCD->PM[2] |= (12<<4);
+    LCD->PM[2] |= (3<<4);
   }
   if (SEG & (1<<2)){ // SEG2 Enable
     LCD->PM[0] |= (12<<0);
@@ -162,8 +162,7 @@ void Display_string(char *str)
     i++;
     switch(length){
       case 1:{
-        LCD_SEG1(GetHexCodeChar(str[0]));
-        LCD_SEG2(0x0000);
+        LCD_SEG2(GetHexCodeChar(str[0]));
         LCD_SEG3(0x0000);
         LCD_SEG4(0x0000);
         LCD_SEG5(0x0000);
@@ -171,50 +170,39 @@ void Display_string(char *str)
         break;
       }
       case 2:{
-        LCD_SEG1(GetHexCodeChar(str[0]));
-        LCD_SEG2(GetHexCodeChar(str[1]));
-        LCD_SEG3(0x0000);
+        LCD_SEG2(GetHexCodeChar(str[0]));
+        LCD_SEG3(GetHexCodeChar(str[1]));
         LCD_SEG4(0x0000);
         LCD_SEG5(0x0000);
         LCD_SEG6(0x0000);
         break;
       }
       case 3:{
-        LCD_SEG1(GetHexCodeChar(str[0]));
-        LCD_SEG2(GetHexCodeChar(str[1]));
-        LCD_SEG3(GetHexCodeChar(str[2]));
-        LCD_SEG4(0x0000);
+        LCD_SEG2(GetHexCodeChar(str[0]));
+        LCD_SEG3(GetHexCodeChar(str[1]));
+        LCD_SEG4(GetHexCodeChar(str[2]));
         LCD_SEG5(0x0000);
         LCD_SEG6(0x0000);
+        
         break;
              }
       case 4:{
-    LCD_SEG1(GetHexCodeChar(str[0]));
-    LCD_SEG2(GetHexCodeChar(str[1]));
-    LCD_SEG3(GetHexCodeChar(str[2]));
-    LCD_SEG4(GetHexCodeChar(str[3]));
-    LCD_SEG5(0x0000);
+    LCD_SEG2(GetHexCodeChar(str[0]));
+    LCD_SEG3(GetHexCodeChar(str[1]));
+    LCD_SEG4(GetHexCodeChar(str[2]));
+    LCD_SEG5(GetHexCodeChar(str[3]));
     LCD_SEG6(0x0000);
     break;
             }
   case 5:{
-    LCD_SEG1(GetHexCodeChar(str[0]));
-    LCD_SEG2(GetHexCodeChar(str[1]));
-    LCD_SEG3(GetHexCodeChar(str[2]));
-    LCD_SEG4(GetHexCodeChar(str[3]));
-    LCD_SEG5(GetHexCodeChar(str[4]));
-    LCD_SEG6(0x0000);
+    LCD_SEG2(GetHexCodeChar(str[0]));
+    LCD_SEG3(GetHexCodeChar(str[1]));
+    LCD_SEG4(GetHexCodeChar(str[2]));
+    LCD_SEG5(GetHexCodeChar(str[3]));
+    LCD_SEG6(GetHexCodeChar(str[4]));
     break;
           }
-  case 6:{
-    LCD_SEG1(GetHexCodeChar(str[0]));
-    LCD_SEG2(GetHexCodeChar(str[1]));
-    LCD_SEG3(GetHexCodeChar(str[2]));
-    LCD_SEG4(GetHexCodeChar(str[3]));
-    LCD_SEG5(GetHexCodeChar(str[4]));
-    LCD_SEG6(GetHexCodeChar(str[5]));
-    break;
-         }
+ 
   default:
     LCD_SEG6(0x00000);
     LCD_SEG5(0x00000);
@@ -250,8 +238,8 @@ uint16_t GetHexCodeNum(int data){
 uint16_t GetHexCodeChar(char data){
   switch (data){
   case ' ': return 0x0000; break;
-  case 'A': case 'a': return 0x0477; break;
-  case 'B': case 'b': return 0x0150F; break;
+  case 'A': case 'a': return 0x08F0/*0x0477*/; break;
+  case 'B': case 'b': return 0x047C/*0x0150F*/; break;
   case 'C': case 'c': return 0x0039; break;
   case 'D': case 'd': return 0x110F; break;
   case 'E': case 'e': return 0x0079; break;

@@ -23,8 +23,12 @@ rule browsedata
 build gpio.pbi : index gpio.xcl
 build lcd.pbi : index lcd.xcl
 build ram.pbi : index ram.xcl
+build uart.pbi : index uart.xcl
 build main.pbi : index main.xcl
-build MOCK_PROJECT_6.pbd : link gpio.pbi lcd.pbi ram.pbi main.pbi
+build MOCK_PROJECT_6_part0.pbi : link gpio.pbi lcd.pbi
+build MOCK_PROJECT_6_part1.pbi : link ram.pbi uart.pbi
+build MOCK_PROJECT_6_part2.pbi : link main.pbi
+build MOCK_PROJECT_6.pbd : link MOCK_PROJECT_6_part0.pbi MOCK_PROJECT_6_part1.pbi MOCK_PROJECT_6_part2.pbi
 build MOCK_PROJECT_6.pbw : browsedata MOCK_PROJECT_6.pbd
 
 

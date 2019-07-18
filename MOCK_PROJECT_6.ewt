@@ -2164,6 +2164,9 @@
         <file>
             <name>$PROJ_DIR$\MyLib\src\ram.c</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\MyLib\src\uart.c</name>
+        </file>
     </group>
     <file>
         <name>$PROJ_DIR$\main.c</name>

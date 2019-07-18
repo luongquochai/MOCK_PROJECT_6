@@ -8,6 +8,7 @@
 
 void UART_Init(void);
 void UART_Transmit(char data);
+void UART_Receive(char data);
 void UART_SendString(char *data);
 
 #endif

@@ -10,7 +10,8 @@ void UART_Init(void)
 
 	UART->CR2 |= (1<<3); // Transmitter Enable
 	UART->CR2 |= (1<<2); // Receiver Enable
-	UART->CR2 |= (1<<5); // Receive Interrupt Enable
+	UART->CR2 |= (1<<5); // Receiver Interrupt Enable
+       // UART->CR2 |= (1<<7); //Transmitter interrupt enable
 
 }
 
@@ -27,6 +28,7 @@ void UART_SendString(char *data)
 		i++;
 	}
 }
+
 
 /*NOTED:register gives the compiler a hint to place the variable in a register instead of memory/stack space.
  In some cases, there won't be enough registers for every variable you place this keyword on so placing it
