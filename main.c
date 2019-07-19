@@ -13,14 +13,14 @@ void CLK_Init(void);
 void GPIO_Init(void);
 void ITC_Init(void);
 void delay_ms(unsigned int ms);
-void Calc_Point(void);
+
 
 int main( void )
 {
   GPIO_Init();
   CLK_Init();
   UART_Init();
- // ITC_Init();
+
   LCD_Init((1<<1)|(1<<2)|(1<<3)| (1<<4)|(1<<5)|(1<<6)) ;
   asm("RIM\n");
   while (1){
@@ -124,7 +124,10 @@ __interrupt void Press (void)
 {
    counta++;
    press = true;
-   UART_SendString("a\n");
+   UART_SendString("a");
+
+  //  countb++;
+  //  UART_SendString("b");
 
    EXTI->SR1 |= (1<<1);
 }
@@ -138,7 +141,8 @@ __interrupt void UART_Recived(void)
   recvData = UART->DR;
   if(recvData == 'b')
     countb++;
-
+  // if(recvData == 'a')
+  //   counta++;
  
 
 }

@@ -8980,20 +8980,6 @@
     "scope": null
   },
   {
-    "ID": "c:@F@Calc_Point",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Calc_Point(void)",
-    "location": {
-      "column": "6",
-      "line": "16",
-      "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
-    },
-    "name": "Calc_Point",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
     "ID": "c:@F@main",
     "What": "Function",
     "defdec": "Def",
@@ -9064,7 +9050,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1194@F@delay_ms@i",
+    "ID": "c:main.c@1157@F@delay_ms@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
@@ -9112,7 +9098,7 @@
     "display": "void UART_Recived(void)",
     "location": {
       "column": "18",
-      "line": "133",
+      "line": "136",
       "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
     },
     "name": "UART_Recived",
