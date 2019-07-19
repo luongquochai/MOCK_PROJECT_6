@@ -4,14 +4,16 @@
 #include "ram.h"
 #include "uart.h"
 
-unsigned int counta = 0, countb = 0;
+signed int counta = 0, countb = 0;
 volatile bool press = true, sent = false;
 volatile unsigned char recvData;
+volatile unsigned int done = 0;
 
 void CLK_Init(void);
 void GPIO_Init(void);
 void ITC_Init(void);
 void delay_ms(unsigned int ms);
+void Calc_Point(void);
 
 int main( void )
 {
@@ -22,6 +24,7 @@ int main( void )
   LCD_Init((1<<1)|(1<<2)|(1<<3)| (1<<4)|(1<<5)|(1<<6)) ;
   asm("RIM\n");
   while (1){
+
     
   }
  
@@ -66,6 +69,7 @@ void delay_ms(unsigned int ms)
     i++;
 }
 
+
 #pragma vector = 18
 __interrupt void Display(void)
 {
@@ -79,35 +83,42 @@ __interrupt void Display(void)
    LCD_SEG5(GetHexCodeNum(countb /10));
    LCD_SEG6(GetHexCodeNum(countb %10));
   
+  if(((counta % countb) >= 2) && (counta >=11) )
+  {
+    LCD->CR3 |=(1<<3);
+    UART->CR2 &= ~(1<<2);
+    Display_string("A WIN");
+    done = 1;
+  }
+  if(((countb % counta) >= 2) && (countb >=11))
+  {
+    LCD->CR3 |=(1<<3);
+    UART->CR2 &= ~(1<<2);
+    Display_string("B WIN");
+    done = 1;
+  }
+  
+
+  if(done == 0){
    if(press)
   {
      
      LCD_SEG2(GetHexCodeNum(counta / 10));
      LCD_SEG3(GetHexCodeNum(counta % 10));
   }
-//  Display_string("LOSE");
   if(sent)
   {
     LCD_SEG5(GetHexCodeNum(countb / 10));
     LCD_SEG6(GetHexCodeNum(countb % 10));
     sent = false;
   }
-  //Calculate
-  if(counta == 11 && (counta - countb) > 2)
-  {
-    Display_string("WIN");
-    UART_SendString("LOSE");
-  }
-  if(countb == 11 && (countb - counta) > 2)
-  {
-    UART_SendString("WIN");
-    Display_string("LOSE");
-  }
-
-
 
   LCD->CR3 |=(1<<3); // clear interrupt flag
+    }
 }
+
+
+
 #pragma vector = 11
 __interrupt void Press (void)
 {
@@ -124,7 +135,6 @@ __interrupt void UART_Recived(void)
   
   GPIOC->ODR ^= (1<<7);
   sent = true;
-  
   recvData = UART->DR;
   if(recvData == 'b')
     countb++;

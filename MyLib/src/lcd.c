@@ -162,6 +162,7 @@ void Display_string(char *str)
     i++;
     switch(length){
       case 1:{
+        LCD_SEG1(0x0000);
         LCD_SEG2(GetHexCodeChar(str[0]));
         LCD_SEG3(0x0000);
         LCD_SEG4(0x0000);
@@ -170,6 +171,7 @@ void Display_string(char *str)
         break;
       }
       case 2:{
+        LCD_SEG1(0x0000);
         LCD_SEG2(GetHexCodeChar(str[0]));
         LCD_SEG3(GetHexCodeChar(str[1]));
         LCD_SEG4(0x0000);
@@ -178,6 +180,7 @@ void Display_string(char *str)
         break;
       }
       case 3:{
+        LCD_SEG1(0x0000);
         LCD_SEG2(GetHexCodeChar(str[0]));
         LCD_SEG3(GetHexCodeChar(str[1]));
         LCD_SEG4(GetHexCodeChar(str[2]));
@@ -187,6 +190,7 @@ void Display_string(char *str)
         break;
              }
       case 4:{
+        LCD_SEG1(0x0000);
     LCD_SEG2(GetHexCodeChar(str[0]));
     LCD_SEG3(GetHexCodeChar(str[1]));
     LCD_SEG4(GetHexCodeChar(str[2]));
@@ -195,6 +199,7 @@ void Display_string(char *str)
     break;
             }
   case 5:{
+    LCD_SEG1(0x0000);
     LCD_SEG2(GetHexCodeChar(str[0]));
     LCD_SEG3(GetHexCodeChar(str[1]));
     LCD_SEG4(GetHexCodeChar(str[2]));
