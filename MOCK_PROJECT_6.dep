@@ -5,97 +5,101 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
-            <file>$PROJ_DIR$\MyLib\src\lcd.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\ram.__cstat.et</file>
-            <file>$PROJ_DIR$\MyLib\src\uart.c</file>
-            <file>$PROJ_DIR$\main.c</file>
-            <file>$PROJ_DIR$\MyLib\src\ram.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\lcd.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\gpio.__cstat.et</file>
-            <file>$PROJ_DIR$\MyLib\src\gpio.c</file>
-            <file>$TOOLKIT_DIR$\lib\dbgstm8smd.a</file>
-            <file>$PROJ_DIR$\Debug\Obj\lcd.xcl</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$PROJ_DIR$\MyLib\inc\lcd.h</file>
-            <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
-            <file>$PROJ_DIR$\Debug\List\MOCK_PROJECT_6.map</file>
-            <file>$PROJ_DIR$\MyLib\inc\gpio.h</file>
-            <file>$PROJ_DIR$\MyLib\inc\stm8l_define.h</file>
             <file>$TOOLKIT_DIR$\config\lnkstm8l152c6.icf</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\MOCK_PROJECT_6.pbd</file>
+            <file>$PROJ_DIR$\MyLib\inc\uart.h</file>
+            <file>$PROJ_DIR$\MyLib\src\ram.c</file>
+            <file>$PROJ_DIR$\MyLib\src\lcd.c</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\ram.__cstat.et</file>
+            <file>$PROJ_DIR$\MyLib\src\gpio.c</file>
+            <file>$PROJ_DIR$\MyLib\src\uart.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\gpio.__cstat.et</file>
+            <file>$PROJ_DIR$\MyLib\inc\gpio.h</file>
             <file>$PROJ_DIR$\Debug\Obj\lcd.o</file>
             <file>$TOOLKIT_DIR$\lib\dlstm8smn.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\gpio.xcl</file>
             <file>$PROJ_DIR$\Debug\Obj\ram.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\gpio.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\ram.xcl</file>
             <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Debug\List\MOCK_PROJECT_6.map</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd.__cstat.et</file>
             <file>$PROJ_DIR$\Debug\Obj\uart.xcl</file>
-            <file>$PROJ_DIR$\MyLib\inc\ram.h</file>
-            <file>$PROJ_DIR$\Debug\Exe\MOCK_PROJECT_6.out</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
             <file>$PROJ_DIR$\Debug\Obj\main.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\uart.o</file>
+            <file>$PROJ_DIR$\MyLib\inc\ram.h</file>
+            <file>$PROJ_DIR$\MyLib\inc\lcd.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
             <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\ram.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\gpio.xcl</file>
+            <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
+            <file>$PROJ_DIR$\Debug\Exe\MOCK_PROJECT_6.out</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\MyLib\inc\stm8l_define.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\gpio.o</file>
             <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\MOCK_PROJECT_6.pbd</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-            <file>$PROJ_DIR$\MyLib\inc\uart.h</file>
+            <file>$TOOLKIT_DIR$\lib\dbgstm8smd.a</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 32 16</file>
+                    <file> 34 20</file>
                 </tool>
             </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\MyLib\src\ram.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 18</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 31</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 9</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 37 19 29 27 36 17 26 1 35 40 3 24</file>
+                </tool>
+            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\MyLib\src\lcd.c</name>
             <outputs>
                 <tool>
                     <name>ICCSTM8</name>
-                    <file> 21</file>
+                    <file> 16</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 10</file>
+                    <file> 38</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 6</file>
+                    <file> 21</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCSTM8</name>
-                    <file> 14 18 27 33 11 13 22 29 0 28 37 39 12 40</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\MyLib\src\uart.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 35</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 30</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 41 18 27 33 11 13 22 29 0 28 37 39</file>
+                    <file> 25 37 19 29 27 36 17 26 1 35 40 3 13 2</file>
                 </tool>
             </inputs>
         </file>
@@ -104,44 +108,21 @@
             <outputs>
                 <tool>
                     <name>ICCSTM8</name>
-                    <file> 36</file>
+                    <file> 28</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 34</file>
+                    <file> 23</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 20</file>
+                    <file> 30</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCSTM8</name>
-                    <file> 18 27 33 11 13 22 29 0 28 37 39 14 17 31 41</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\MyLib\src\ram.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 24</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 26</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 2</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCSTM8</name>
-                    <file> 18 27 33 11 13 22 29 0 28 37 39 31</file>
+                    <file> 37 19 29 27 36 17 26 1 35 40 3 25 15 24 5</file>
                 </tool>
             </inputs>
         </file>
@@ -150,21 +131,40 @@
             <outputs>
                 <tool>
                     <name>ICCSTM8</name>
-                    <file> 25</file>
+                    <file> 39</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 23</file>
+                    <file> 32</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 7</file>
+                    <file> 14</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCSTM8</name>
-                    <file> 18 27 33 11 13 22 29 0 28 37 39 17</file>
+                    <file> 37 19 29 27 36 17 26 1 35 40 3 15</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\MyLib\src\uart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 12</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 22</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 5 37 19 29 27 36 17 26 1 35 40 3</file>
                 </tool>
             </inputs>
         </file>
@@ -173,13 +173,13 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 16</file>
+                    <file> 20</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 19 25 21 36 24 35 15 9</file>
+                    <file> 0 39 16 28 18 12 33 41</file>
                 </tool>
             </inputs>
         </file>

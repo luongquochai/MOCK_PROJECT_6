@@ -2094,7 +2094,7 @@
     "scope": null
   },
   {
-    "ID": "c:lcd.c@4238@F@Display_string@length",
+    "ID": "c:lcd.c@4270@F@Display_string@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
@@ -2108,7 +2108,7 @@
     "scope": null
   },
   {
-    "ID": "c:lcd.c@4276@F@Display_string@i",
+    "ID": "c:lcd.c@4308@F@Display_string@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
@@ -9014,7 +9014,7 @@
     "display": "void CLK_Init(void)",
     "location": {
       "column": "6",
-      "line": "45",
+      "line": "47",
       "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
     },
     "name": "CLK_Init",
@@ -9028,7 +9028,7 @@
     "display": "void ITC_Init(void)",
     "location": {
       "column": "6",
-      "line": "57",
+      "line": "59",
       "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
     },
     "name": "ITC_Init",
@@ -9042,7 +9042,7 @@
     "display": "void delay_ms(unsigned int)",
     "location": {
       "column": "6",
-      "line": "65",
+      "line": "67",
       "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
     },
     "name": "delay_ms",
@@ -9050,13 +9050,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1157@F@delay_ms@i",
+    "ID": "c:main.c@1200@F@delay_ms@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "25",
-      "line": "67",
+      "line": "69",
       "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
     },
     "name": "i",
@@ -9070,7 +9070,7 @@
     "display": "void Display(void)",
     "location": {
       "column": "18",
-      "line": "74",
+      "line": "76",
       "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
     },
     "name": "Display",
@@ -9084,7 +9084,7 @@
     "display": "void Press(void)",
     "location": {
       "column": "18",
-      "line": "123",
+      "line": "129",
       "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
     },
     "name": "Press",
@@ -9098,7 +9098,7 @@
     "display": "void UART_Recived(void)",
     "location": {
       "column": "18",
-      "line": "136",
+      "line": "143",
       "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
     },
     "name": "UART_Recived",

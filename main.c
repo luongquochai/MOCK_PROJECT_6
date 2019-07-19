@@ -21,7 +21,7 @@ int main( void )
   CLK_Init();
   UART_Init();
 
-  LCD_Init((1<<1)|(1<<2)|(1<<3)| (1<<4)|(1<<5)|(1<<6)) ;
+  LCD_Init((1<<2)|(1<<3)| (1<<4)|(1<<5)|(1<<6)) ;
   asm("RIM\n");
   while (1){
 
@@ -36,6 +36,8 @@ void GPIO_Init(void)
   GPIOC->CR1 |= (1<<7);
   GPIOE->DDR |= (1<<7);
   GPIOE->CR1 |= (1<<7);
+  GPIOC->DDR |= (1<<2);
+  GPIOC->CR1 |= (1<<2);
   
   GPIOC->DDR &= ~(1<<1);
   GPIOC->CR1 |= (1<<1);
@@ -86,15 +88,21 @@ __interrupt void Display(void)
   if(((counta % countb) >= 2) && (counta >=11) )
   {
     LCD->CR3 |=(1<<3);
-    UART->CR2 &= ~(1<<2);
+    
     Display_string("A WIN");
+  
+    
     done = 1;
+    
   }
   if(((countb % counta) >= 2) && (countb >=11))
   {
     LCD->CR3 |=(1<<3);
     UART->CR2 &= ~(1<<2);
     Display_string("B WIN");
+
+    
+    UART->CR2 &= ~(1<<2);
     done = 1;
   }
   
@@ -117,17 +125,16 @@ __interrupt void Display(void)
     }
 }
 
-
-
 #pragma vector = 11
 __interrupt void Press (void)
 {
-   counta++;
+   
    press = true;
-   UART_SendString("a");
+   //counta++;
+   //UART_Transmit('a');
 
-  //  countb++;
-  //  UART_SendString("b");
+    countb++;
+    UART_Transmit('b');
 
    EXTI->SR1 |= (1<<1);
 }
@@ -139,10 +146,11 @@ __interrupt void UART_Recived(void)
   GPIOC->ODR ^= (1<<7);
   sent = true;
   recvData = UART->DR;
-  if(recvData == 'b')
-    countb++;
-  // if(recvData == 'a')
-  //   counta++;
+  //if(recvData == 'b')
+    //countb++;
+   if(recvData == 'a')
+     counta++;
  
 
 }
+//asdasdasdasdsa
