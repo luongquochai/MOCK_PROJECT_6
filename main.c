@@ -4,11 +4,6 @@
 #include "ram.h"
 #include "uart.h"
 
-signed int counta = 0, countb = 0;
-volatile bool press = true, sent = false;
-volatile unsigned char recvData = '0';
-volatile unsigned int done = 0;
-
 void CLK_Init(void);
 void GPIO_Init(void);
 void ITC_Init(void);
@@ -172,4 +167,3 @@ __interrupt void UART_Recived(void)
  
 
 }
-//asdasdasdasdsa
