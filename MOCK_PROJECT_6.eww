@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\MOCK_PROJECT_6.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\demo\MOCK_PROJECT_6_19_7\MOCK_PROJECT_6\MOCK_PROJECT_6.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
