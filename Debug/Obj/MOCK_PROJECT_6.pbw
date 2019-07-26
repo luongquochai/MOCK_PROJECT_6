@@ -8952,7 +8952,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1126@F@delay_ms@i",
+    "ID": "c:main.c@1130@F@delay_ms@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
@@ -8986,7 +8986,7 @@
     "display": "void Press(void)",
     "location": {
       "column": "18",
-      "line": "142",
+      "line": "145",
       "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
     },
     "name": "Press",
@@ -9000,7 +9000,7 @@
     "display": "void UART_Recived(void)",
     "location": {
       "column": "18",
-      "line": "157",
+      "line": "160",
       "path": "D:\\FPT Internship\\MOCK_PROJECT_6\\main.c"
     },
     "name": "UART_Recived",

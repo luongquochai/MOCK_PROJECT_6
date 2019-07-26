@@ -18,8 +18,8 @@ int main( void )
 
   LCD_Init((1<<2)|(1<<3)| (1<<4)|(1<<5)|(1<<6)) ;
   asm("RIM\n");
-  while(!(UART->SR & 0x80));
-    UART->DR = 'r';  //goi tin hieu reset
+//  while(!(UART->SR & 0x80));
+ //   UART->DR = 'r';  //goi tin hieu reset
   while (1){
 
     
@@ -72,30 +72,33 @@ void delay_ms(unsigned int ms)
 #pragma vector = 18
 __interrupt void Display(void)
 {
-     if(recvData == 'r')
-  {
-    counta = 0;
-    countb = 0;
-    UART->CR2 |= (1<<2);
-  }
-//  if(recvData == 'b')
- // {
-  // countb++;
-  //  recvData = '0';
+   //  if(recvData == 'r')
+  //{
+  //  counta = 0;
+  //  countb = 0;
+  //  UART->CR2 |= (1<<2);
  // }
-   if(recvData == 'a')
- {
-    counta++;
+  if(recvData == 'b')
+  {
+   countb++;
+  
     recvData = '0';
+
   }
+ //  if(recvData == 'a')
+ //{
+   // counta++; 
+  //  recvData = '0';
+
+ // }
   //check a &b
   if(counta>=11)
   {
     if((counta - countb) >=2 )
     {
       LCD->CR3 |=(1<<3); // clear interrupt flag
-      //Display_string("WIN");
-      Display_string("LOSE");
+      Display_string("WIN");
+      //Display_string("LOSE");
       done = 1;
       UART->CR2 &= ~(1<<2);
     }
@@ -105,8 +108,8 @@ __interrupt void Display(void)
     if((countb - counta) >= 2 )
     {
       LCD->CR3 |= (1<<3);
-      //Display_string("LOSE");
-      Display_string("WIN");
+      Display_string("LOSE");
+     // Display_string("WIN");
       done = 1;
       UART->CR2 &= ~(1<<2);
     }
@@ -143,11 +146,11 @@ __interrupt void Press (void)
 {
    
    press = true;
-   //counta++;
-  // UART_Transmit('a');
+   counta++;
+   UART_Transmit('a');
 
-    countb++;
-     UART_Transmit('b');
+   // countb++;
+   // UART_Transmit('b');
     
 
    EXTI->SR1 |= (1<<1);
@@ -167,3 +170,5 @@ __interrupt void UART_Recived(void)
  
 
 }
+
+
